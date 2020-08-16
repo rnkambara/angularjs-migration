@@ -1,10 +1,12 @@
-import * as angular from 'angular';
+// import * as angular from 'angular';
 
 angular
   .module("codecraft")
-  .controller("PersonCreateController", PersonCreateController);
-
-function PersonCreateController($scope, $state, ContactService) {
+  .controller("PersonCreateController", function(
+    $scope,
+    $state,
+    ContactService
+  ) {
     $scope.contacts = ContactService;
     $scope.person = {};
 
@@ -14,4 +16,4 @@ function PersonCreateController($scope, $state, ContactService) {
         $state.go("list");
       });
     };
-}
+  });

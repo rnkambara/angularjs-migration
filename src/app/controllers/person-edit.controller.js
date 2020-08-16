@@ -1,11 +1,14 @@
 
-import * as angular from 'angular';
+// import * as angular from 'angular';
 
 angular
   .module("codecraft")
-  .controller("PersonEditController", PersonEditController);
-
-function PersonEditController($scope, $stateParams, $state, ContactService) {
+  .controller("PersonEditController", function(
+    $scope,
+    $stateParams,
+    $state,
+    ContactService
+  ) {
     $scope.contacts = ContactService;
     $scope.person = $scope.contacts.getPerson($stateParams.email);
 
@@ -20,4 +23,4 @@ function PersonEditController($scope, $stateParams, $state, ContactService) {
         $state.go("list");
       });
     };
-}
+  });
