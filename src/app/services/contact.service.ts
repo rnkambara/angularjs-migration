@@ -2,7 +2,9 @@ import * as angular from 'angular';
 
 angular
   .module("codecraft")
-  .factory("ContactService", function(Contact, $rootScope, $q, toaster) {
+  .factory("ContactService", ContactService);
+
+  function ContactService(Contact, $rootScope, $q, toaster) {
     var self = {
       getPerson: function(email) {
         console.log(email);
@@ -106,4 +108,4 @@ angular
     self.loadContacts();
 
     return self;
-  });
+  }

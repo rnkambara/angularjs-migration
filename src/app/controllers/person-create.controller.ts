@@ -4,10 +4,7 @@ angular
   .module("codecraft")
   .controller("PersonCreateController", PersonCreateController);
 
-  function PersonCreateController ( 
-    $scope,
-    $state,
-    ContactService
+  function PersonCreateController ($scope, $state, ContactService
   ) {
     $scope.contacts = ContactService;
     $scope.person = {};

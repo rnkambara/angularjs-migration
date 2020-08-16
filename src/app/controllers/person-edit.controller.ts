@@ -2,11 +2,9 @@ import * as angular from 'angular';
 
 angular
   .module("codecraft")
-  .controller("PersonEditController", function(
-    $scope,
-    $stateParams,
-    $state,
-    ContactService
+  .controller("PersonEditController", PersonEditController);
+
+  function PersonEditController($scope, $stateParams, $state, ContactService
   ) {
     $scope.contacts = ContactService;
     $scope.person = $scope.contacts.getPerson($stateParams.email);
@@ -22,4 +20,4 @@ angular
         $state.go("list");
       });
     };
-  });
+  }

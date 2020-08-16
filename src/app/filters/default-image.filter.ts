@@ -1,6 +1,8 @@
 import * as angular from 'angular';
 
-angular.module("codecraft").filter("defaultImage", function() {
+angular.module("codecraft").filter("defaultImage", defaultImage);
+
+function defaultImage() {
   return function(input, param) {
     if (!param) {
       param = "/img/avatar.png";
@@ -10,4 +12,4 @@ angular.module("codecraft").filter("defaultImage", function() {
     }
     return input;
   };
-});
+}

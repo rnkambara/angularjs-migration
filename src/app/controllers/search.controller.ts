@@ -2,10 +2,12 @@ import * as angular from 'angular';
 
 angular
   .module("codecraft")
-  .controller("SearchController", function($scope, ContactService) {
+  .controller("SearchController", SearchController);
+
+  function SearchController($scope, ContactService) {
     $scope.contacts = ContactService;
 
     $scope.loadMore = function() {
       $scope.contacts.loadMore();
     };
-  });
+  }

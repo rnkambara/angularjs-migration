@@ -1,6 +1,8 @@
 import * as angular from 'angular';
 
-angular.module("codecraft").directive("ccCard", function() {
+angular.module("codecraft").directive("ccCard", ccCard);
+
+function ccCard() {
   return {
     restrict: "AE",
     templateUrl: "templates/card.html",
@@ -17,4 +19,4 @@ angular.module("codecraft").directive("ccCard", function() {
       };
     }
   };
-});
+}
